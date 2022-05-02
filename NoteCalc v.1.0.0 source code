@@ -1,0 +1,74 @@
+print('notepad 1.0 + calc')
+c = 0
+while True:
+    aboba = (input('Choose n or c or e to exit: '))
+    if aboba == 'c':
+        while True:
+            print('type action, [help] for actions list, q for quit')
+            h = (input('>'))
+            if h == 'q':
+                break
+            if h == 'help':
+                print('+, -, *, /')
+                continue
+            if h == '+':
+                a = (float(input('1 st: ')))
+                b = (float(input('2 nd: ')))
+                c = a + b
+                print('Answer is %s' % c)
+                continue
+            if h == '-':
+                a = (float(input('1 st: ')))
+                b = (float(input('2 nd: ')))
+                c = a - b
+                print('Answer is %s' % c)
+                continue
+            if h == '*':
+                a = (float(input('1 st: ')))
+                b = (float(input('2 nd: ')))
+                c = a * b
+                print('Answer is %s' % c)
+                continue
+            if h == '/':
+                a = (float(input('1 st: ')))
+                b = (float(input('2 nd: ')))
+                c = a / b
+                print('Answer is %s' % c)
+                continue
+    if aboba == 'e':
+        break
+    if aboba == 'n':
+        while True:
+            print('press o to open, e to edit file or new,c to clear, q to exit')
+            ch = (input('>'))
+            if ch == 'q':
+                break
+            if ch == 'o':
+                ui = (input('Enter file name (with extentions) : '))
+                print('-----------------------------')
+                with open("%s" % ui) as file:
+                    y = file.read()
+                print(y)
+                print('-----------------------------')
+                o = (input('Press Enter '))
+                if o == 'B':
+                     break
+            if ch == 'c':
+                h = (input('Enter file (with extentions): '))
+                f = open("%s" % h,"w")
+                f.write(str())
+                f.close()
+            if ch == 'e':
+                h = (input('Enter file (with extentions): '))
+                while True:
+                    print('/calc to insert last calculate result, /exit to exit and save')
+                    i = (input('') + '\n')
+                    if i == '/calc'+'\n':
+                        f = open("%s" % h,"a")
+                        f.write(str(c))
+                    if i == '/exit'+'\n':
+                        f.close()
+                        break
+                    else:
+                        f = open("%s" % h,"a")
+                        f.write(str(i))
